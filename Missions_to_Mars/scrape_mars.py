@@ -95,7 +95,7 @@ def scrape_mars_weather():
 
         browser.is_element_present_by_css("div", wait_time=1)
 
-        # Visit Mars Weather Twitter through splinter module
+        # Url Mars Weather Twitter 
         weather_url = 'https://twitter.com/marswxreport?lang=en'
         browser.visit(weather_url)
 
@@ -120,7 +120,7 @@ def scrape_mars_weather():
         #        pass
         #It was enable to find some info so manually put the info found
         mars_weather="InSight sol 706 (2020-11-21) low -93.1ºC (-135.6ºF) high -11.3ºC (11.6ºF) winds from the W at 4.7 m/s (10.6 mph) gusting to 13.1 m/s (29.2 mph) pressure at 7.40 hPa"
-        # Dictionary entry 
+        # Add weather mars
         mars_info["mars_weather"] = mars_weather
         
         return mars_info
@@ -131,27 +131,26 @@ def scrape_mars_weather():
 # Mars Facts
 def scrape_mars_facts():
 
-    # Visit Mars facts url 
-    facts_url = 'http://space-facts.com/mars/'
+    # Url Facts 
+    mars_facts_url = "http://space-facts.com/mars/"
 
-    # Use Panda's `read_html` to parse the url
-    mars_facts = pd.read_html(facts_url)
+    # Using read_html and pandas
+    mars_facts = pd.read_html(mars_facts_url)
 
-    # Find the mars facts DataFrame in the list of DataFrames as assign it to `mars_df`
+    # DataFrame
     mars_facts_df = mars_facts[0]
 
-    # Assign the columns 
+    # Name columns 
     mars_facts_df.columns = ["Facts","Values"]
 
-    # Set the index to the `Description` column without row indexing
+    # Index the facts
     mars_facts_df.set_index("Facts", inplace=True)
 
-    # Save html code to folder Assets
+    # DataFrame to html
     Facts = mars_facts_df.to_html()
 
-    # Dictionary entry from MARS FACTS
+    # Add Facts 
     mars_info['mars_facts'] = Facts
-
     return mars_info
 
 
@@ -163,51 +162,45 @@ def scrape_mars_hemispheres():
         # Initialize browser 
         browser = init_browser()
 
-        # Visit hemispheres website through splinter module 
-        hemispheres_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+        # Url hemispheres 
+        hemispheres_url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
         browser.visit(hemispheres_url)
 
         # Html
         html_hemispheres = browser.html
         # Html to BeautifulSoup
-        soup = BeautifulSoup(html_hemispheres, 'html.parser')
+        soup = BeautifulSoup(html_hemispheres,"html.parser")
 
-        # Retreive all items that contain mars hemispheres information
-        items = soup.find_all('div', class_='item')
+        # Hemisphere data contained in items
+        items = soup.find_all("div", class_="item")
 
-        # Create empty list for hemisphere urls 
-        hemisphere_image_urls = []
+        # Hemisphere list 
+        hemisphere_image_urls=[]
 
-        # Store the main_ul 
-        hemispheres_main_url = 'https://astrogeology.usgs.gov' 
+        # Main url 
+        hemispheres_main_url="https://astrogeology.usgs.gov" 
 
-        # Loop through the items previously stored
+        # Find title and image´s
         for i in items: 
-            # Store title
-            title = i.find('h3').text
-            
-            # Store link that leads to full image website
-            image_url = i.find('a', class_='itemLink product-item')['href']
+            title = i.find("h3").text
+            image_url = i.find("a", class_="itemLink product-item")["href"]
             
             # Visit the link that contains the full image website 
             browser.visit(hemispheres_main_url + image_url)
             
-            # HTML Object of individual hemisphere information website 
+            # to complete html 
             image_html = browser.html
             
-            # Parse HTML with Beautiful Soup for every individual hemisphere information website 
-            soup = BeautifulSoup(image_html, 'html.parser')
+             # Html for each hemisphere image
+            soup = BeautifulSoup(image_html, "html.parser")
             
-            # Retrieve full image source 
-            image_url = hemispheres_main_url + soup.find('img', class_='wide-image')['src']
+            # Complete Image 
+            image_url = hemispheres_main_url + soup.find("img",class_="wide-image")["src"]
             
-            # Append the retreived information into a list of dictionaries 
+            # Add title and image url
             hemisphere_image_urls.append({"title" : title, "image_url" : image_url})
 
-        mars_info['hiu'] = hemisphere_image_urls
-
-        
-        # Return mars_data dictionary 
+        mars_info["hemisphere_image_urls"] = hemisphere_image_urls        
         return mars_info
 
     finally:
