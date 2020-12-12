@@ -37,8 +37,9 @@ def scrape_mars_news():
         news_paragraph = soup.find("div", class_="article_teaser_body").text
 
         # Add title and paragraph to dictionary
-        mars_info['news_title'] = news_title
-        mars_info['news_paragraph'] = news_paragraph
+        mars_info["news_title"] = news_title
+        mars_info["news_paragraph"] = news_paragraph
+
         return mars_info
 
     finally:
@@ -150,7 +151,8 @@ def scrape_mars_facts():
     Facts = mars_facts_df.to_html()
 
     # Add Facts 
-    mars_info['mars_facts'] = Facts
+    mars_info["mars_facts"] = Facts
+
     return mars_info
 
 
@@ -172,10 +174,10 @@ def scrape_mars_hemispheres():
         soup = BeautifulSoup(html_hemispheres,"html.parser")
 
         # Hemisphere data contained in items
-        items = soup.find_all("div", class_="item")
+        items = soup.find_all("div",class_="item")
 
         # Hemisphere list 
-        hemisphere_image_urls=[]
+        hemispheres_image_urls=[]
 
         # Main url 
         hemispheres_main_url="https://astrogeology.usgs.gov" 
@@ -198,9 +200,10 @@ def scrape_mars_hemispheres():
             image_url = hemispheres_main_url + soup.find("img",class_="wide-image")["src"]
             
             # Add title and image url
-            hemisphere_image_urls.append({"title" : title, "image_url" : image_url})
+            hemispheres_image_urls.append({"title" : title, "image_url" : image_url})
 
-        mars_info["hemisphere_image_urls"] = hemisphere_image_urls        
+        mars_info["hemispheres_image_urls"] = hemispheres_image_urls    
+
         return mars_info
 
     finally:
