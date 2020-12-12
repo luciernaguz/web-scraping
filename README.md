@@ -8,4 +8,4 @@ The whole project is included in the Mission to Mars folder, the Jupyter Noteboo
 
 Through the Scrape New Data button, we can go in search of new information, the update will take a while.
 
-At the end It was a complete challenge of all learned. 
+
