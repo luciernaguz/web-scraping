@@ -1,5 +1,5 @@
 # web-scraping-challenge
-### Web Scraping Bootcamp Challenge
+### Web Scraping Challenge
 
 ## A very complete challenge to meet, it was interesting to put into practice what was learned, however it took a long time to solve the scrap.
 It is not complete at all, the twitter part turned out to be more complicated despite dedicating the most time to it, it was incredibly that of so many combinations I did not manage to obtain any information, in itself a Mission that took too long without anything back.
