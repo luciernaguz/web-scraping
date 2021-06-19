@@ -8,4 +8,7 @@ The whole project is included in the Mission to Mars folder, the Jupyter Noteboo
 
 Through the Scrape New Data button, we can go in search of new information, the update will take a while.
 
+Some Images
+![Temperature Observation](/Images/Temperature_observation.png)
+
 
