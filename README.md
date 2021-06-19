@@ -8,7 +8,16 @@ The whole project is included in the Mission to Mars folder, the Jupyter Noteboo
 
 Through the Scrape New Data button, we can go in search of new information, the update will take a while.
 
-Some Images
-![Temperature Observation](/Images/Temperature_observation.png)
+Mission to Mars
+
+![Mission to mars] (Missions_to_Mars/images/Mission to mars Info.png)
+
+![Hemisphere] ( Missions_to_Mars/images/Mission to mars Hemispheres 1.png)
+
+![Hemisphere] ( /Missions_to_Mars/images/Mission to mars Hemisphere 2.png)
+
+![Mongo DB] (/Missions_to_Mars/images/Mongo scrape_mars.png)
+
+
 
 
