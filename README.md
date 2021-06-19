@@ -18,7 +18,6 @@ Mission to Mars
 
 ![Mongo DB](Missions_to_Mars/images/Mongo scrape_mars.png)
 
-![Wind Speed vs Latitude](Missions_to_Mars/images/Mission_to_mars_Info.png)
 
 
 
