@@ -10,13 +10,13 @@ Through the Scrape New Data button, we can go in search of new information, the 
 
 Mission to Mars
 
-![Mission to mars](Missions_to_Mars/images/Mission to mars Info.png)
+![Mission to mars](Missions_to_Mars/images/MissiontomarsInfo.png)
 
-![Hemisphere](Missions_to_Mars/images/Mission to mars Hemispheres 1.png)
+![Hemisphere](Missions_to_Mars/images/Hemispheres1.png)
 
-![Hemisphere](Missions_to_Mars/images/Mission to mars Hemisphere 2.png)
+![Hemisphere](Missions_to_Mars/images/Hemisphere2.png)
 
-![Mongo DB](Missions_to_Mars/images/Mongo scrape_mars.png)
+![Mongo DB](Missions_to_Mars/images/Mongoscrapemars.png)
 
 
 
