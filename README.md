@@ -14,7 +14,7 @@ Mission to Mars
 
 ![Hemisphere](Missions_to_Mars/images/Hemispheres1.png)
 
-![Hemisphere](Missions_to_Mars/images/Hemisphere2.png)
+![Hemisphere](Missions_to_Mars/images/Hemispheres2.png)
 
 ![Mongo DB](Missions_to_Mars/images/Mongoscrapemars.png)
 
